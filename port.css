@@ -1,0 +1,364 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  background-color: rgb(27, 27, 27);
+  color: white;
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+.header {
+  padding: 1rem;
+  position: relative;
+  z-index: 100;
+}
+
+.mainnav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.mainnav .name-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .mainnav .name-container {
+    width: auto;
+  }
+}
+.mainnav .name {
+  transition: all 0.3s ease;
+  color: wheat;
+  font-size: 1.5rem;
+  font-family: cursive;
+  letter-spacing: 0.3rem;
+  font-weight: 800;
+  background-color: tomato;
+  padding: 0.5rem 1rem;
+  display: inline-block;
+  border-radius: 0.3em;
+}
+.mainnav .name b {
+  background-color: tomato;
+}
+.mainnav .name:hover {
+  color: black;
+}
+.mainnav .mobile-menu-toggle {
+  display: block;
+  background: none;
+  border: none;
+  color: wheat;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+@media (min-width: 768px) {
+  .mainnav .mobile-menu-toggle {
+    display: none;
+  }
+}
+.mainnav .links {
+  width: 100%;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+.mainnav .links.active {
+  max-height: 300px;
+}
+@media (min-width: 768px) {
+  .mainnav .links {
+    width: auto;
+    max-height: none;
+  }
+}
+.mainnav .links ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0;
+}
+@media (min-width: 768px) {
+  .mainnav .links ul {
+    flex-direction: row;
+    padding: 0;
+  }
+}
+.mainnav .links ul li {
+  margin: 0.5rem 0;
+}
+@media (min-width: 768px) {
+  .mainnav .links ul li {
+    margin: 0 1rem;
+  }
+}
+.mainnav .links ul li a {
+  color: wheat;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+.mainnav .links ul li a:hover {
+  color: tomato;
+}
+.mainnav .links ul li button {
+  transition: all 0.3s ease;
+  color: wheat;
+  border: none;
+  background-color: tomato;
+  padding: 0.5rem 1rem;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  font-weight: bold;
+}
+.mainnav .links ul li button:hover {
+  background-color: wheat;
+  transform: scale(1.05);
+  color: rgb(27, 27, 27);
+}
+
+.main-content {
+  padding: 1rem;
+}
+
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 992px) {
+  .content-wrapper {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.services-section {
+  order: 2;
+  margin: 2rem 0;
+}
+@media (min-width: 992px) {
+  .services-section {
+    order: 1;
+    width: 45%;
+    margin: 0;
+  }
+}
+.services-section .services-list {
+  list-style: none;
+}
+.services-section .services-list .service-item {
+  margin: 1.5rem 0;
+  transition: all 0.3s ease;
+}
+.services-section .services-list .service-item:hover {
+  color: wheat;
+  transform: scale(1.02);
+}
+.services-section .services-list .service-item span {
+  display: inline-block;
+}
+.services-section .socials {
+  margin-top: 2rem;
+}
+.services-section .socials ul {
+  list-style: none;
+}
+.services-section .socials ul li {
+  color: white;
+  margin: 0.5rem 0;
+}
+.services-section .socials ul li span {
+  color: tomato;
+  font-weight: bold;
+}
+.services-section .socials ul li span a {
+  color: white;
+  text-decoration: none;
+}
+
+.photo-section {
+  order: 1;
+  position: relative;
+  margin: 2rem 0;
+}
+@media (min-width: 992px) {
+  .photo-section {
+    order: 2;
+    width: 45%;
+    margin: 0;
+  }
+}
+.photo-section .photo-container {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+.photo-section .photo-container .photo-background {
+  background-color: wheat;
+  height: 80%;
+  width: 100%;
+  position: absolute;
+  top: 10%;
+  border-radius: 0.4rem;
+  z-index: 0;
+}
+.photo-section .photo-container .profile-photo {
+  width: 100%;
+  height: auto;
+  border-radius: 0.4rem;
+  position: relative;
+  z-index: 1;
+  transition: all 0.3s ease;
+}
+.photo-section .photo-container .profile-photo:hover {
+  transform: scale(1.03);
+}
+.photo-section .photo-container .profile-photo:hover + .nickname {
+  opacity: 1;
+  bottom: 1em;
+}
+.photo-section .photo-container .nickname {
+  position: absolute;
+  bottom: -1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: transparent;
+  z-index: 1;
+  color: white;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  transition: 1s;
+}
+.photo-section .decorations {
+  position: relative;
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+.photo-section .decorations .decoration {
+  background-color: tomato;
+  height: 3rem;
+  width: 3rem;
+  border-radius: 0.3rem;
+  position: relative;
+}
+.photo-section .decorations .decoration button {
+  transition: all 0.3s ease;
+  height: 1.4rem;
+  width: 1.4rem;
+  border-radius: 0.7rem;
+  background-color: rgb(27, 27, 27);
+  border: none;
+  position: absolute;
+  cursor: pointer;
+}
+.photo-section .decorations .decoration-1 button {
+  right: 0.7rem;
+  bottom: -0.7rem;
+}
+.photo-section .decorations .decoration-1:hover button {
+  bottom: 0.2em;
+  left: 1em;
+}
+.photo-section .decorations .decoration-2 button {
+  right: 0.7rem;
+  bottom: -0.7rem;
+}
+.photo-section .decorations .decoration-2:hover button {
+  bottom: 1em;
+}
+.photo-section .decorations .decoration-3 button {
+  right: 0.7rem;
+  bottom: -0.7em;
+}
+.photo-section .decorations .decoration-3:hover button {
+  bottom: 2em;
+}
+
+.message-section {
+  padding: 2rem 1rem;
+  margin: 2rem 0;
+}
+.message-section .message-title {
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+.message-section .contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+.message-section .contact-form .message-input {
+  width: 100%;
+  height: 10rem;
+  border-radius: 1rem;
+  padding: 1rem;
+  background-color: wheat;
+  border: 2px solid tomato;
+  resize: vertical;
+  color: rgb(27, 27, 27);
+  font-family: inherit;
+  transition: all 0.3s ease;
+}
+.message-section .contact-form .message-input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(255, 99, 71, 0.5);
+}
+.message-section .contact-form .submit-btn {
+  display: block;
+  margin: 1rem auto 0;
+  padding: 0.5rem 2rem;
+  background-color: tomato;
+  color: wheat;
+  border: none;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.message-section .contact-form .submit-btn:hover {
+  background-color: #ff3814;
+  transform: scale(1.05);
+}
+
+.services-details {
+  padding: 2rem 1rem;
+  background-color: tomato;
+  border-radius: 1rem;
+  margin: 2rem 0;
+}
+.services-details .services-info {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.services-details .services-info .services-list-detailed {
+  list-style: none;
+}
+.services-details .services-info .services-list-detailed li {
+  margin: 1rem 0;
+  padding: 0.5rem;
+  background-color: tomato;
+  border-radius: 0.3rem;
+  list-style-type: disc;
+}
+
+@media (max-width: 480px) {
+  .mainnav .name {
+    font-size: 1.2rem;
+    letter-spacing: 0.2rem;
+    padding: 0.3rem 0.5rem;
+  }
+  .services-section .services-list .service-item {
+    font-size: 0.9rem;
+  }
+}/*# sourceMappingURL=port.css.map */
