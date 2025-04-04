@@ -1,11 +1,11 @@
-// Variables
+
 $primary-color: tomato;
 $secondary-color: wheat;
 $dark-bg: rgb(27, 27, 27);
 $text-color: white;
 $transition-speed: 0.3s;
 
-// Mixins
+
 @mixin flex-center {
     display: flex;
     justify-content: center;
@@ -16,7 +16,6 @@ $transition-speed: 0.3s;
     transition: $property $transition-speed ease;
 }
 
-// Base Styles
 * {
     margin: 0;
     padding: 0;
@@ -31,7 +30,7 @@ body {
     line-height: 1.6;
 }
 
-// Header & Navigation
+
 .header {
     padding: 1rem;
     position: relative;
@@ -154,7 +153,6 @@ body {
     }
 }
 
-// Main Content
 .main-content {
     padding: 1rem;
 }
@@ -170,7 +168,6 @@ body {
     }
 }
 
-// Services Section
 .services-section {
     order: 2;
     margin: 2rem 0;
@@ -223,7 +220,6 @@ body {
     }
 }
 
-// Photo Section
 .photo-section {
     order: 1;
     position: relative;
@@ -264,7 +260,7 @@ body {
 
                 & + .nickname {
                     opacity: 1;
-                   // position: relative;
+                   
                    
                     bottom:1em;
                 }
@@ -348,7 +344,7 @@ body {
     }
 }
 
-// Message Section
+
 .message-section {
     padding: 2rem 1rem;
     margin: 2rem 0;
@@ -400,7 +396,7 @@ body {
     }
 }
 
-// Services Details Section
+
 .services-details {
     padding: 2rem 1rem;
     background-color: tomato;
@@ -425,7 +421,7 @@ body {
     }
 }
 
-// Responsive Adjustments
+
 @media (max-width: 480px) {
     .mainnav {
         .name {
